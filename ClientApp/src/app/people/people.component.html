@@ -1,0 +1,22 @@
+<p *ngIf="!people"><em>Loading...</em></p>
+
+<h2>WCF People Data</h2>
+
+<table class='table' *ngIf="people">
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Age</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people">
+      <td>{{ person.firstName }}</td>
+      <td>{{ person.lastName }}</td>
+      <td>{{ person.age }}</td>
+      <td>{{ person.location }}</td>
+    </tr>
+  </tbody>
+</table>
