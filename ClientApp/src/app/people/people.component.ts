@@ -9,7 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class PeopleComponent {
   public people: Person[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(http: HttpClient) {
+    const baseUrl = 'http://people/';
     http.get<Person[]>(baseUrl + 'api/SampleData/people').subscribe(result => {
       this.people = result;
     }, error => console.error(error));
